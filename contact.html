@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Oshun Yoga Studio</title>
+    <link rel="stylesheet" href="yogacss/yoga.css">
+</head>
+
+<body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <span class="brand-icon" aria-hidden="true">✺</span>
+            <span>Oshun<small>YOGA STUDIO</small></span>
+        </a>
+
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="classes.html">Classes</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="mythology.html">Mythology</a>
+            <a href="contact.html" aria-current="page">Contact</a>
+        </nav>
+
+        <a class="button small" href="schedule.html">Find your flow ↗</a>
+    </header>
+
+    <main id="main">
+        <section class="page-intro">
+            <p class="eyebrow">LET’S CONNECT</p>
+            <h1>Begin with a hello.</h1>
+
+            <p>
+                Have a question about a class or your first visit?
+                There is room for you here.
+            </p>
+        </section>
+
+        <section class="contact-layout">
+            <aside class="contact-card">
+                <p class="eyebrow">FIND OUR STUDIO</p>
+                <h2>A golden welcome.</h2>
+
+                <address>
+                    Oshun Yoga Studio<br>
+                    333 River Way<br>
+                    Savannah, GA 31401
+                </address>
+
+                <p>
+                    <a href="tel:9124281224">912-428-1224</a>
+                </p>
+
+                <p>
+                    Drop-ins welcome.<br>
+                    Mats, blocks, and blankets provided.
+                </p>
+
+                <span class="sun" aria-hidden="true">✺</span>
+            </aside>
+
+            <div class="form-card">
+                <h2>Send a little sunshine.</h2>
+                <p>Required fields are marked with an asterisk (*).</p>
+
+                <p class="notice">
+                    This is a demonstration form.
+                    Messages are not sent or saved.
+                </p>
+
+                <form id="contact-form">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name"
+                        autocomplete="name" maxlength="100" required>
+
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email"
+                        autocomplete="email" required>
+
+                    <label for="interest">I’m interested in</label>
+                    <select id="interest" name="interest">
+                        <option value="">Choose a class or topic</option>
+                        <option>Gentle Hatha</option>
+                        <option>Vinyasa</option>
+                        <option>Restorative</option>
+                        <option>General question</option>
+                    </select>
+
+                    <label for="message">Your message *</label>
+                    <textarea id="message" name="message"
+                        rows="5" maxlength="3000" required></textarea>
+
+                    <button class="button" type="submit">
+                        Try the form ↗
+                    </button>
+
+                    <p id="form-status" role="status"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <a class="footer-brand" href="index.html">Oshun Yoga Studio</a>
+            <p>Find Your Flow. Embrace Your Light.</p>
+        </div>
+
+        <address>
+            333 River Way<br>
+            Savannah, GA 31401<br>
+            <a href="tel:9124281224">912-428-1224</a>
+        </address>
+
+        <div>
+            <a href="contact.html">Connect with us ↗</a>
+            <p>&copy; 2026 Oshun Yoga Studio</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("contact-form").addEventListener(
+            "submit",
+            function (event) {
+                event.preventDefault();
+
+                document.getElementById("form-status").textContent =
+                    "Your form is complete! This demo has not sent " +
+                    "or saved your message.";
+            }
+        );
+    </script>
+</body>
+
+</html>
