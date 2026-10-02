@@ -1,67 +1,716 @@
-body {
-    background-color: #ECD632;
-    color: #72503B;
-    font-family: Verdana; 
+/* Your original cream, gold, and brown colors */
+:root {
+    --cream: #FFF8DC;
+    --brown: #72503B;
+    --ochre: #8B6508;
+    --gold: #D4AF37;
+    --pale: #F5E6A8;
+    --ink: #442F22;
 }
 
-header {
-    background-color: #FFFFFF;
-    text-align: center;
+/* General page styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: Georgia, serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-underline-offset: 5px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.13;
+    font-weight: normal;
 }
 
 h1 {
-    line-height: 200%;
+    font-size: clamp(2.7rem, 5vw, 5rem);
+    letter-spacing: -.035em;
+    margin-bottom: 25px;
 }
 
-nav {
-    text-align: center;
-    font-weight: bold;
+h2 {
+    font-size: clamp(2rem, 3vw, 3rem);
 }
 
-nav a {
-    text-decoration: none; 
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    max-width: 65ch;
 }
 
 .studio {
-    font-style: itallic; 
+    font-style: italic;
 }
 
-footer {
-    background-color: #FFFFFF;
-    font-size: .60em;
-    text-align: center; 
-    font-style: italic; 
+/* Header and studio name */
+.site-header {
+    max-width: 1400px;
+    margin: auto;
+    padding: 23px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    border-bottom: 1px solid #D4AF3760;
 }
 
-#wrapper {
-    width: 80%;
-    margin-right: auto;
+.brand {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    text-decoration: none;
+    font-size: 2rem;
+    line-height: 1.1;
+}
+
+.brand small {
+    display: block;
+    font: 10px Arial, sans-serif;
+    letter-spacing: .26em;
+    margin-top: 7px;
+}
+
+.brand-icon {
+    font-size: 3rem;
+    color: var(--ochre);
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav a {
+    padding: 9px 12px;
+    text-decoration: none;
+    font: 14px Arial, sans-serif;
+    border-radius: 30px;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+    background: var(--pale);
+}
+
+/* Buttons and small text */
+.button {
+    display: inline-block;
+    background: var(--ochre);
+    color: white;
+    padding: 14px 25px;
+    border-radius: 40px;
+    text-decoration: none;
+    border: 0;
+    font: 600 14px Arial, sans-serif;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: var(--ink);
+}
+
+.button.small {
+    padding: 11px 18px;
+}
+
+.text-link {
+    font: 600 14px Arial, sans-serif;
+}
+
+.eyebrow {
+    font: 600 11px Arial, sans-serif;
+    letter-spacing: .18em;
+    color: var(--ochre);
+    margin-bottom: 24px;
+}
+
+/* Home page introduction */
+.hero {
+    max-width: 1400px;
+    margin: auto;
+    padding: 65px 6% 75px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 7%;
+    align-items: center;
+}
+
+.hero h1 em {
+    color: var(--ochre);
+}
+
+.hero-copy > p {
+    font-size: 1.07rem;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.hero-copy .hero-note {
+    font: 12px Arial, sans-serif;
+    margin: 25px 0 0;
+    color: var(--brown);
+}
+
+/* Curved artwork frame */
+.hero-art {
+    margin: 0;
+    position: relative;
+    padding: 20px 20px 0;
+    background: var(--pale);
+    border-radius: 220px 220px 12px 12px;
+    box-shadow: 18px 16px 0 #D4AF3726;
+}
+
+.hero-art img {
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+    border-radius: 200px 200px 8px 8px;
+}
+
+.hero-art figcaption {
+    font: italic 13px Georgia, serif;
+    text-align: center;
+    padding: 17px 5px;
+}
+
+/* Gold message strip */
+.ribbon {
+    background: var(--gold);
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    padding: 18px 20px;
+    font: 600 12px Arial, sans-serif;
+    letter-spacing: .18em;
+}
+
+.ribbon span {
+    font-size: 24px;
+}
+
+/* Shared content sections */
+.section {
+    max-width: 1250px;
+    padding: 75px 5%;
+    margin: auto;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    margin: 0;
+}
+
+/* Home page class cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    padding: 35px;
+    background: var(--pale);
+    border-radius: 8px 60px 8px 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.number {
+    font: 11px Arial, sans-serif;
+    letter-spacing: .12em;
+    margin-bottom: 36px;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+}
+
+.card a {
+    margin-top: auto;
+    font: 600 13px Arial, sans-serif;
+}
+
+.honey {
+    background: var(--gold);
+}
+
+.brown {
+    background: var(--brown);
+    color: var(--cream);
+}
+
+/* Oshun inspiration section */
+.inspiration {
+    background: var(--pale);
+    padding: 60px max(6%, calc((100vw - 1100px) / 2));
+    display: grid;
+    grid-template-columns: .7fr 1fr;
+    gap: 70px;
+    align-items: center;
+    border-radius: 100px 0 100px 0;
+}
+
+.inspiration img {
+    height: 350px;
+    max-width: 100%;
+    margin: auto;
+    border-radius: 160px 160px 12px 12px;
+    object-fit: cover;
+}
+
+.welcome {
+    text-align: center;
+}
+
+.welcome p {
     margin-left: auto;
+    margin-right: auto;
+}
+
+/* Introduction on the other pages */
+.page-intro {
+    padding: 65px 6% 45px;
+    max-width: 1400px;
+    margin: auto;
+    border-bottom: 1px solid #D4AF3760;
+}
+
+.page-intro h1 {
+    max-width: 850px;
+}
+
+.page-intro p:last-child {
+    font-size: 1.12rem;
+}
+
+/* Classes page */
+.class-list {
+    padding-top: 25px;
+}
+
+.class-row {
+    display: grid;
+    grid-template-columns: 70px 1fr auto;
+    align-items: center;
+    gap: 35px;
+    padding: 45px 0;
+    border-bottom: 1px solid var(--gold);
+    scroll-margin-top: 25px;
+}
+
+.class-number {
+    font-size: 3rem;
+    color: var(--ochre);
+}
+
+.class-row h2 {
+    margin-bottom: 18px;
+}
+
+/* Highlighted information */
+.callout {
+    max-width: 1100px;
+    margin: 0 auto 65px;
+    background: var(--pale);
+    border-radius: 8px 60px 8px 8px;
+    padding: 35px 40px;
+}
+
+.callout h2 {
+    font-size: 2rem;
+}
+
+.callout p {
+    max-width: 80ch;
+}
+
+.notice {
+    background: #F5E6A880;
+    border-left: 3px solid var(--ochre);
+    padding: 12px 18px;
+    font: 14px/1.6 Arial, sans-serif;
+}
+
+/* Schedule table */
+.table-wrap {
+    overflow: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1rem;
+}
+
+caption {
+    text-align: left;
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+th,
+td {
+    padding: 18px;
+    text-align: left;
+    border-bottom: 1px solid #D4AF3780;
+}
+
+thead {
+    background: var(--brown);
+    color: var(--cream);
+}
+
+tbody tr:nth-child(even) {
+    background: var(--pale);
+}
+
+/* Mythology page */
+.myth-layout {
+    max-width: 1250px;
+    margin: auto;
+    padding: 60px 5%;
+    display: grid;
+    grid-template-columns: .6fr 1fr;
+    gap: 45px;
+}
+
+.myth-art img {
+    width: 100%;
+    border-radius: 160px 160px 10px 10px;
+}
+
+.myth-art p {
+    font-style: italic;
+    margin-top: 20px;
 }
 
 .story {
-    background-color: #FFF8DC;
-    color: #72503B;
-    font-family: Georgia, serif;
-    font-size: 1.1em;
-    line-height: 1.8;
-    padding: 25px;
-    margin: 20px auto;
-    max-width: 800px;
-    border: 2px solid #D4AF37;
-    border-radius: 10px;
+    margin: 25px 0 40px;
 }
 
 .story dt {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #8B6508;
-    text-align: center;
+    font-size: 2rem;
+    color: var(--ochre);
     margin-bottom: 20px;
 }
 
 .story dd {
-    margin-left: 0;
-    text-align: left;
-    line-height: 1.8;
+    margin: 0;
+    line-height: 1.9;
+}
+
+/* Contact page */
+.contact-layout {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 5%;
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 40px;
+}
+
+.contact-card {
+    background: var(--pale);
+    padding: 40px;
+    border-radius: 8px 80px 8px 8px;
+}
+
+.contact-card h2 {
+    font-size: 2.6rem;
+}
+
+.sun {
+    font-size: 8rem;
+    line-height: 1.5;
+    color: var(--ochre);
+}
+
+.form-card {
+    padding: 10px 0;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+label {
+    font: 600 14px Arial, sans-serif;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--brown);
+    background: #FFFDF4;
+    border-radius: 6px;
+    font: 16px/1.5 Arial, sans-serif;
+    color: var(--ink);
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+form button {
+    justify-self: start;
+}
+
+#form-status {
+    font: 14px/1.6 Arial, sans-serif;
+}
+
+/* Footer */
+footer {
+    background: var(--brown);
+    color: var(--cream);
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+    padding: 45px 6%;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 10px 0 0;
+}
+
+.footer-brand {
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+
+address {
+    font-style: normal;
+}
+
+/* Keyboard accessibility */
+:focus-visible {
+    outline: 3px solid var(--ochre);
+    outline-offset: 4px;
+}
+
+.skip {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background: white;
+    padding: 12px;
+    z-index: 2;
+}
+
+.skip:focus {
+    top: 10px;
+}
+
+/* Tablet screens */
+@media (max-width: 900px) {
+    .site-header {
+        flex-wrap: wrap;
+    }
+
+    .site-header > .button {
+        display: none;
+    }
+
+    nav {
+        gap: 0;
+    }
+
+    .hero {
+        gap: 35px;
+        padding-top: 40px;
+    }
+
+    .hero-art img {
+        height: 360px;
+    }
+
+    .cards {
+        gap: 12px;
+    }
+
+    .card {
+        padding: 25px;
+    }
+
+    .class-row {
+        grid-template-columns: 45px 1fr;
+    }
+
+    .class-row > .button {
+        grid-column: 2;
+    }
+
+    .myth-layout {
+        grid-template-columns: .5fr 1fr;
+        gap: 25px;
+    }
+}
+
+/* Phone screens */
+@media (max-width: 650px) {
+    .site-header {
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .brand {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+        width: 100%;
+    }
+
+    nav a {
+        padding: 9px 10px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 40px 6%;
+    }
+
+    .hero-art {
+        max-width: 380px;
+        justify-self: center;
+    }
+
+    .hero-art img {
+        height: 390px;
+    }
+
+    .ribbon {
+        gap: 12px;
+        font-size: 9px;
+        letter-spacing: .05em;
+    }
+
+    .ribbon span {
+        font-size: 18px;
+    }
+
+    .section {
+        padding: 45px 6%;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .cards,
+    .inspiration,
+    .myth-layout,
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .inspiration {
+        padding: 40px 7%;
+        gap: 30px;
+        border-radius: 60px 0 60px 0;
+    }
+
+    .inspiration img {
+        height: 320px;
+    }
+
+    .class-row {
+        gap: 15px;
+    }
+
+    .class-number {
+        font-size: 2rem;
+    }
+
+    .callout {
+        margin: 0 6% 40px;
+        padding: 25px;
+    }
+
+    .page-intro {
+        padding: 40px 6%;
+    }
+
+    .myth-art {
+        max-width: 300px;
+        margin: auto;
+    }
+
+    .contact-layout {
+        padding: 40px 6%;
+        gap: 30px;
+    }
+
+    .sun {
+        font-size: 5rem;
+    }
+
+    .contact-card {
+        padding: 30px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    th,
+    td {
+        padding: 12px 10px;
+    }
+
+    table {
+        font-size: .88rem;
+    }
 }
